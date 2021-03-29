@@ -1,0 +1,43 @@
+-------------------------------------------------------
+Structural and Lagrangian growth model
+    of migrating and drifting phytoplankton
+    global application
+    
+ kai wirtz (HZG) Mar 2021
+-------------------------------------------------------
+
+Code availability:
+https://github.com/kaiwirtz/VerticalMigration
+
+The MATLAB code enables standalone or parallel simulations and numerical experiments.  facilitates file input and output operations.
+
+Execution:
+-------------
+call MATLAB function glob_prods(...)
+
+%  with OPTIONAL arguments
+%  offset: defines the first index of the local domain - increments in a parallel simulation
+%  season: 1-4 1:'DJF' 2:'MAM' 3:'JJA' 4:'SON'
+%  parsv:  string with changed parameter values (e.g., 'bmax=3' for switching off migration)
+%  pix0:   starting grid cell in case of continuing a large loop
+
+file dependencies:
+-------------
+locs.mat
+depthg.mat
+glob_env_[1-4].mat
+
+param_set.m
+find_strat.m
+calc_rgr_ibm.m
+
+
+LICENSE
+-------
+If not stated otherwise, the entire model software is licensed under
+  the GNU Public License version 3 or later.
+  See <http://www.gnu.org/licenses/gpl-3.0.txt>
+  for the complete terms of the license.
+
+Documentation:
+--------------

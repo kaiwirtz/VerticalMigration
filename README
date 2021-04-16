@@ -1,8 +1,7 @@
 -------------------------------------------------------
 Structural and Lagrangian growth model
-    of migrating and drifting phytoplankton
-    global application
-    
+    of migrating and drifting phytoplankton:
+    global applications
  kai wirtz (HZG) Mar 2021
 -------------------------------------------------------
 
@@ -27,10 +26,15 @@ locs.mat
 depthg.mat
 glob_env_[1-4].mat
 
-param_set.m
-find_strat.m
-calc_rgr_ibm.m
-
+glob_prods.m
+  param_set.m
+  find_strat.m
+    calc_rgr_ibm.m
+        chl2c.m
+           chl2n.m
+        calc_quota.m
+          calc_lightsat.m
+          calc_q_lightlim.m
 
 LICENSE
 -------

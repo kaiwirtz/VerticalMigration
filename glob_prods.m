@@ -67,7 +67,7 @@ if (maxx-1)*dx + 1 + mod(offset,dx)*scale>nx,  maxx=maxx-1; end
 param_set; % set all process parameters
 omega=omega/1.15; % rescale mortality  %*1.325;%*1.32;
 
-kchl0=kchl; I_al0=I_al;
+kchl0=kchl; I_al0=I_al; carb0    = 1;
 eval([pvs ';']); % reset parameter if given in argument
 if bmax<5 % variant without migration
   vsmS0=vs0;
@@ -214,7 +214,7 @@ for pix=pix0:maxx
   %   mobile population (vertical migrators)
   % ----------------------------------------
   % ------- initial guess of biomass
-     mort = mortality(omega,zN,30); % rough mortality estimate for 30m SCM width
+     mort = omega; % specific mortality rate
     	% TODO check for role/sensitivity of upper bound for numerical safety
      carbn = min(3E3,(mu/(Tfm*mort)-carb0)*2*15);% equilibrium biomass
   % initial guess of CHL:C (no quota)
@@ -240,9 +240,8 @@ for pix=pix0:maxx
         if max(vs_v ) <1E-5 | length(iv)==0
             carbn=0;
         else
-          % ------- precise mortality estimate
-          %          for current estimate of SCM width
-          mort = mortality(omega,zN,b); %
+          % -------  mortality estimate
+         mort = omega; % specific mortality rate
 
    %%     fprintf('  \t   C1=%1.0f\tchln=%1.1f\n',carbn,chln);
 
